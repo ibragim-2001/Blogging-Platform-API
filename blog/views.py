@@ -38,7 +38,14 @@ class PostView(APIView):
             return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, id):
-        ...
+        post = Post.objects.get(id=id)
+        serializer = PostSerializer(post, data=request.data)
+        if serializer.is_valid():
+            try:
+                serializer.save()
+                return Response(status=status.HTTP_200_OK)
+            except Exception as e:
+                return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
 
     def delete(self, request, id):
         try:
