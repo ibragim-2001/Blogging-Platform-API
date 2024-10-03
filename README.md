@@ -26,6 +26,12 @@ _You should create a RESTful API for a personal blogging platform. The API shoul
 
 _You don't need to implement pagination, authentication, or authorization for this project. You can focus on the core functionality of the API._
 
+## Technology Stack
+* Python 3.11
+* Django(Web Framework)
+* Django Rest Framework
+* SQLite
+
 ## Installation and launch
 
 1.`python -m venv venv`
